@@ -1,240 +1,74 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="sienna" data-build="a1b2c3d4">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-neon-void">
-    <title>가양 셔츠룸 정보 | 가양 No.1 셔츠룸 모음</title>
-    <meta name="description" content="야! 형들 여기 가양 셔츠룸 정보 다 정리했어. 이용시간, 가격, 꿀팁까지. 이거 보고 가면 완전 럭키비키. 가양 셔츠룸 모음 실전 가이드 🔥">
-    <meta name="keywords" content="가양 셔츠룸 정보, 가양셔츠룸 이용팁, 가양 셔츠룸 가격, 가양 셔츠룸 모음, 가양 셔츠룸 후기">
-    <link rel="canonical" href="https://t3b06-gy-shirts-list-1.vercel.app/info">
-    <meta property="og:title" content="가양 셔츠룸 정보 | 가양 No.1 셔츠룸 모음">
-    <meta property="og:description" content="야! 형들 여기 가양 셔츠룸 정보 다 정리했어. 이용시간, 가격, 꿀팁까지. 이거 보고 가면 완전 럭키비키. 가양 셔츠룸 모음 실전 가이드 🔥">
-    <style>
-        /* RESET & BASE */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Space Grotesk', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.4;
-            min-height: 100vh;
-        }
-        a { color: #ff2a6d; text-decoration: none; transition: all 0.2s; }
-        a:hover { color: #05d9e8; text-shadow: 0 0 8px #ff2a6d; }
-        img, svg { max-width: 100%; display: block; }
-
-        /* TYPOGRAPHY – RAW & OVERSIZED */
-        h1, h2, h3, h4 { font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; }
-        h1 { font-size: clamp(3.5rem, 12vw, 8rem); line-height: 0.85; color: #ff2a6d; text-shadow: 4px 4px 0 #05d9e8; }
-        h2 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 0.9; color: #05d9e8; text-shadow: 2px 2px 0 #ff2a6d; margin-bottom: 1rem; }
-        h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); color: #fff; margin-bottom: 0.5rem; }
-        p { font-size: 1.1rem; margin-bottom: 1rem; max-width: 65ch; }
-        .text-accent { color: #ff2a6d; font-weight: 700; }
-        .text-big { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; line-height: 0.9; }
-
-        /* LAYOUT – FULL BLEED, ASYMMETRIC, AIRY */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
-
-        /* NAV */
-        nav {
-            border-bottom: 3px solid #ff2a6d;
-            background: #0a0a0a;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 0.8rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        nav .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #05d9e8;
-            text-shadow: 2px 2px 0 #ff2a6d;
-            letter-spacing: -0.02em;
-        }
-        nav .logo span { color: #ff2a6d; }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-        nav ul li a {
-            font-weight: 700;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .hamburger-menu { display: none; }
-
-        /* HERO */
-        .hero {
-            padding: 4rem 0 3rem;
-            border-bottom: 4px solid #ff2a6d;
-            margin-bottom: 3rem;
-        }
-        .hero h1 { margin-bottom: 1rem; }
-        .hero p { font-size: 1.3rem; }
-
-        /* SECTION */
-        section { margin-bottom: 4rem; }
-        .section-title { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
-        .section-title::before, .section-title::after { content: ''; flex: 1; height: 3px; background: #ff2a6d; }
-
-        /* CARDS */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .card {
-            background: #1a1a1a;
-            border: 2px solid #05d9e8;
-            padding: 2rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 8px 8px 0 #ff2a6d;
-        }
-        .card h3 { margin-bottom: 1rem; }
-        .card p { font-size: 0.95rem; }
-        .card .card-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
-
-        /* FAQ */
-        .faq { margin-top: 2rem; }
-        .faq details {
-            border-bottom: 1px solid #333;
-            padding: 1rem 0;
-        }
-        .faq summary {
-            font-weight: 700;
-            font-size: 1.2rem;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq summary::after { content: '+'; font-size: 1.5rem; color: #ff2a6d; }
-        .faq details[open] summary::after { content: '-'; }
-        .faq details p { padding-top: 0.5rem; }
-
-        /* FOOTER */
-        footer {
-            border-top: 3px solid #ff2a6d;
-            padding: 3rem 0 2rem;
-            text-align: center;
-            color: #666;
-        }
-        footer p { font-size: 0.9rem; }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .container { padding: 1.5rem 1rem; }
-            h1 { font-size: 2.8rem; }
-            h2 { font-size: 2rem; }
-            nav ul { display: none; }
-            .hamburger-menu {
-                display: block;
-                font-size: 2rem;
-                color: #05d9e8;
-                cursor: pointer;
-            }
-            .nav-open ul {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #0a0a0a;
-                padding: 1rem;
-                border-bottom: 3px solid #ff2a6d;
-            }
-            .card-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>가양 셔츠룸 모음 — 정보</title>
+  <meta name="description" content="가양에 위치한 셔츠룸에 대한 상세 정보와 지역 시그널을 제공합니다. 실무 담당자가 현장에서 필요한 체크리스트, 인원 변동 대비 방법, 예약 전 반드시 확인해야 할 기준 등을 친절하게 안내합니다.">
+  <meta name="keywords" content="가양, 셔츠룸, 가양 셔츠룸 모음, 셔츠룸 준비, 이벤트 장소 가양, 셔츠룸 예약">
+  <link rel="canonical" href="https://gayang-shirt-info.program-school.online/about.html">
+  <meta name="generator" content="custom-cms-jqrz">
+  <meta name="bpaas-design-system" content="editorial-apple">
+  <meta name="bpaas-design-theme" content="kr-noir-burgundy">
+  <meta property="og:title" content="가양 셔츠룸 모음 — 정보">
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:url" content="https://gayang-shirt-info.program-school.online/about.html">
 </head>
 <body>
+  <header class="x-txt-tedn">
+    <nav class="nav-present responsive-768">
+      <ul>
+        <li><a href="/index.html">홈</a></li>
+        <li><a href="/list.html">셔츠룸 리스트</a></li>
+        <li><a href="/info.html">정보</a></li>
+        <li><a href="/contact.html">문의</a></li>
+      </ul>
+    </nav>
+    <h1 class="x-btn-m6gh">가양 셔츠룸 모음 — 상세 정보</h1>
+  </header>
 
-<!-- NAV (전체 페이지 공통) -->
-<nav>
-    <div class="logo">가양<span>셔츠룸</span>.com</div>
-    <ul>
-        <li><a href="/">모음</a></li>
-        <li><a href="/price">가격</a></li>
-        <li><a href="/info">정보</a></li>
-        <li><a href="/map">지도</a></li>
-    </ul>
-    <div class="hamburger-menu" onclick="this.parentElement.classList.toggle('nav-open')">☰</div>
-</nav>
+  <section class="x-txt-tedn">
+    <h2>가양 지역 셔츠룸의 특색</h2>
+    <p>가양은 대중교통 접근성이 뛰어나고, 주변에 다양한 카페와 편의시설이 밀집해 있어 촬영팀과 스태프가 편리하게 이동할 수 있습니다. 특히, 근처에 주차장이 잘 갖춰진 건물들이 많아 차량 이용 시에도 큰 불편이 없습니다.</p>
+    <p>각 셔츠룸은 고유한 인테리어 테마를 가지고 있어, 촬영 목적에 맞는 분위기를 선택하기 쉽습니다. 예를 들어, 빈티지 스타일을 원한다면 레트로 가구와 조명을 갖춘 공간을, 모던한 느낌을 원한다면 깔끔한 흰색 벽과 최소한의 소품을 제공하는 룸을 선택하면 됩니다.</p>
+  </section>
 
-<main class="container">
+  <section class="x-txt-tedn">
+    <h2>예약 전 반드시 확인해야 할 체크포인트</h2>
+    <p>첫 번째로, 원하는 촬영 날짜와 시간대에 해당 셔츠룸이 실제로 가능한지 실시간 캘린더를 확인하세요. 일부 공간은 주말에 프리미엄 요금을 적용하거나, 평일에도 특정 시간대에만 사용이 제한될 수 있습니다.</p>
+    <p>두 번째로, 제공되는 기본 설비 목록을 꼼꼼히 살펴보세요. 조명 세트, 배경지, 전원 콘센트 수, 그리고 음향 차단 설비가 포함돼 있는지 여부는 촬영 품질에 큰 차이를 만들기 때문입니다.</p>
+  </section>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1>정보<br><span class="text-accent">정리</span></h1>
-        <p class="text-big" style="color:#05d9e8; text-shadow:2px 2px 0 #ff2a6d;">가양 셔츠룸,<br>이거 모르면 뻘짓</p>
-        <p>야 형들, 가양 셔츠룸 모음 사이트 운영하면서 내가 직접 발로 뛰고 겪은 정보들이다. 가격, 위치, 분위기 이런 기본은 물론이고, 예약 꿀팁부터 시간대별 혜택까지 싹 다 정리했어. 이 글만 보면 너도 가양 셔츠룸 고수된다. 🔥</p>
-    </section>
+  <section class="x-txt-tedn">
+    <h2>인원 변동에 대비하는 현명한 운영 팁</h2>
+    <p>촬영 현장에서는 인원 변동이 빈번합니다. 초기 인원 계획에 10~15% 정도의 여유를 두고 예약하면, 갑작스러운 추가 인원에도 추가 요금 없이 공간을 활용할 수 있는 경우가 많습니다. 물론, 사전에 업체와 여유 인원 협의가 필요합니다.</p>
+    <p>또한, 인원 변동 시에는 사전 설정된 좌석 배치와 동선 흐름을 재점검하세요. 특히, 카메라와 조명 위치가 바뀔 경우 그림자와 빛 반사가 달라질 수 있기 때문에, 현장에서 즉시 조정할 수 있는 스페어 장비를 준비해 두는 것이 좋습니다.</p>
+  </section>
 
-    <!-- SECTION 1: 기본 정보 카드 -->
-    <section>
-        <div class="section-title"><h2>핵꿀팁 3</h2></div>
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-icon">⏰</div>
-                <h3>시간대 전략</h3>
-                <p>오픈런(오후 1시~3시)이 진짜다. 가격도 싸고, 룸 상태도 깨끗하고, 마인드 좋은 언니들 많이 붙어. 밤 10시 이후는 피해라 – 가격은 그대로인데 서비스 질은 떨어지는 경우 많음. 내 경험담이다 ㅋㅋ</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">💎</div>
-                <h3>VIP 룸 꿀팁</h3>
-                <p>일반룸 예약하고 가면 "VIP 업글 가능하다"고 꼬시는 경우 있는데, 현장에서 말하면 보통 30~50% 할인해줌. 네고는 무조건 해라. "형님 저 자주 오는데 조금만 깎아주세요" – 이 한마디면 왠만하면 들어줌.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📍</div>
-                <h3>길치 주의</h3>
-                <p>가양 셔츠룸 골목은 생각보다 복잡하다. 특히 2층 이상 업소들은 간판이 작아서 지나치기 쉬움. 네이버지도보다 카카오맵이 더 정확함. 미리 찍어놓고 가라. 나도 처음에 20분 헤맸다 ㅜㅜ</p>
-            </div>
-        </div>
-    </section>
+  <section class="x-txt-tedn">
+    <h2>현장 마무리·정산 체크리스트</h2>
+    <p>촬영이 끝난 뒤에는 모든 장비와 소품을 원래 위치에 되돌려 놓고, 사용한 전력량과 소모된 소모품(예: 조명 전구, 배터리 등)을 기록합니다. 이 기록은 다음 결제 단계에서 비용 투명성을 확보하는 데 큰 도움이 됩니다.</p>
+    <p>마지막으로, 현장 책임자와 함께 사진이나 영상으로 최종 셋업을 촬영해 두면, 추후 동일 공간을 재예약할 때 준비 시간을 크게 절감할 수 있습니다. 또한, 촬영 후 정산 보고서에 사진을 첨부하면, 업체와의 소통이 원활해집니다.</p>
+  </section>
 
-    <!-- SECTION 2: 상세 정보 (텍스트 중심) -->
-    <section>
-        <div class="section-title"><h2>가양 셔츠룸<br>이것만 알면 끝</h2></div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-            <div>
-                <h3>💰 가격대</h3>
-                <p>기본 1시간 10~15만원. 2시간 패키지가 보통 20~25만원. 이거보다 비싸면 바가지 씌우는 거니까 걸러라. 내가 다 뒤져본 결과, <span class="text-accent">가양 셔츠룸 모음</span>에 올라온 곳들은 다 합리적인 가격이니까 안심하고 골라.</p>
-                <p>참고로 주말에는 2~3만원씩 더 받는 곳도 있음. 평일 낮에 가는 걸 강추한다. 대신 언니들 숫자는 좀 적을 수 있음.</p>
-            </div>
-            <div>
-                <h3>🕐 운영시간</h3>
-                <p>대부분 오후 1시부터 익일 새벽 4시까지. 24시 하는 곳도 있는데, 새벽 2시 이후에는 취한 손님들 때문에 분위기 험악해질 수 있음. 안전하게 10시~12시 사이에 가는 걸 추천.</p>
-                <p>코로나 이후로 몇몇 업소는 운영시간 단축했으니까 꼭 전화 확인해라. <span class="text-accent">가양 셔츠룸 모음</span> 사이트에서 바로 전화번호 확인 가능하니까 이용해.</p>
-            </div>
-            <div>
-                <h3>🧴 서비스 종류</h3>
-                <p>기본 셔츠룸 서비스(와인, 안주, 노래) + α. 요즘 대부분 풀코스 개념으로 마사지나 샤워까지 되는 곳이 많아. 단, "샤워 가능"이라고 쓰여있어도 실제로는 협소한 경우도 있으니까 예약할 때 꼭 물어봐.</p>
-                <p>일부 업소는 외국인 언니들도 있는데 언어 장벽 있을 수 있음. 한국인 언니 원하면 말해. <span class="text-accent">가양 셔츠룸 모음</span>에 후기 많이 달아놨으니 참고해.</p>
-            </div>
-        </div>
-    </section>
+  <section class="x-txt-tedn">
+    <h2>자주 묻는 질문 (FAQ)</h2>
+    <div class="x-btn-m6gh">
+      <h3>Q1. 예약 변경 시 추가 비용이 발생하나요?</h3>
+      <p>A. 대부분의 셔츠룸은 24시간 전까지는 무료로 변경이 가능하지만, 급박하게 변경할 경우 공간 가용성에 따라 추가 요금이 부과될 수 있습니다. 따라서 가능한 빨리 변경 요청을 하는 것이 좋습니다.</p>
+    </div>
+    <div class="x-btn-m6gh">
+      <h3>Q2. 촬영 장비를 직접 가져가도 되나요?</h3>
+      <p>A. 네, 외부 장비 반입이 가능합니다. 다만, 전원 용량과 안전 규정을 확인하고, 현장 담당자와 사전 협의 후 진행해야 합니다. 필요한 경우 현장에 기본 장비를 추가로 제공받을 수도 있습니다.</p>
+    </div>
+    <div class="x-btn-m6gh">
+      <h3>Q3. 음식물 반입은 허용되나요?</h3>
+      <p>A. 대부분의 셔츠룸에서는 촬영 중 음식물 반입을 금지하고 있습니다. 촬영 전후에만 지정된 휴게 공간에서 식사가 가능하므로, 해당 규정을 반드시 숙지해 주세요.</p>
+    </div>
+  </section>
 
-    <!-- SECTION 3: 추가 팁 (비공식 정보) -->
-    <section>
-        <div class="section-title"><h2>형만 아는<br>비밀정보</h2></div>
-        <div style="background:#1a1a1a;border:2px solid #ff2a6d;padding:2rem;">
-            <p class="text-big" style="color:#ff2a6
+  <footer class="x-txt-tedn">
+    <p>© 2026 가양 셔츠룸 모음. 모든 권리 보유.</p>
+  </footer>
 </body>
 </html>
